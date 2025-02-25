@@ -9,7 +9,7 @@ app.get('/contact', (req, res) => {
 app.get('/about', (req, res) => {
   res.send('The About Page');
 });
-const PORT = 3000;
+const PORT = process.env.PORT;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
