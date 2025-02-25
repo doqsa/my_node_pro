@@ -1,7 +1,15 @@
-var http = require('http');
-
-http.createServer(function (request, response) {
-    response.writeHead(200, {'Content-Type' : 'text/plain'});
-    response.write('Hello Nodejs');
-    response.end();
-}).listen(process.env.PORT);
+const express = require('express');
+const app = express();
+app.get('/', (req, res) => {
+  res.send('Hello From Node.js');
+});
+app.get('/contact', (req, res) => {
+    res.send('The Contact Page');
+});
+app.get('/about', (req, res) => {
+  res.send('The About Page');
+});
+const PORT = 3000;
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
